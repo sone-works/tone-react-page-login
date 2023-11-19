@@ -1,4 +1,3 @@
-import ClientComponent from './ClientComponent'
-import ServerComponent from './ServerComponent'
+import LoginPage from './LoginPage'
 
-export { ClientComponent, ServerComponent }
+export default LoginPage

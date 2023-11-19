@@ -421,6 +421,11 @@
     estree-walker "^2.0.2"
     picomatch "^2.3.1"
 
+"@sone-dao/tone-react-core-ui@^2.0.1":
+  version "2.0.1"
+  resolved "https://registry.yarnpkg.com/@sone-dao/tone-react-core-ui/-/tone-react-core-ui-2.0.1.tgz#5b3cb22942568d335d1dac16c574f555c914c03f"
+  integrity sha512-cOBLChxs+sd++304DUQAC8fqB4QqK/WLxkz6KWSDbX9isVDAOWlTDf8Yq6bfE8wwbcKi+y9sYeaewVbRxv3Yqg==
+
 "@swc/helpers@0.5.1":
   version "0.5.1"
   resolved "https://registry.yarnpkg.com/@swc/helpers/-/helpers-0.5.1.tgz#e9031491aa3f26bfcc974a67f48bd456c8a5357a"
