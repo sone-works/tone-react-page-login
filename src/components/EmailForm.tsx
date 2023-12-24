@@ -33,7 +33,12 @@ export default function EmailForm({
             {errorMessage}
           </div>
         )}
-        <Button className="pt-2">Send Code</Button>
+        <Button className="pt-2">
+          {isLoading && (
+            <i className="fa-fw fa-regular fa-compact-disc mr-1 fa-spin-pulse" />
+          )}
+          Send Code
+        </Button>
       </Form>
     </div>
   )

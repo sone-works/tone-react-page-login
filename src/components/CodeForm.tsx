@@ -9,6 +9,7 @@ type CodeFormProps = {
   userEmail: string
   useUserStore: UseUserStore
   useStyleStore: UseStyleStore
+  setLoginProgress: Function
   api: ToneServiceApi
 }
 
@@ -16,9 +17,10 @@ export default function CodeForm({
   userEmail,
   useUserStore,
   useStyleStore,
+  setLoginProgress,
   api,
 }: CodeFormProps) {
-  const [loading, setLoading] = useState<boolean>(false)
+  const [isLoading, setLoading] = useState<boolean>(false)
 
   const router = useRouter()
 
@@ -30,7 +32,12 @@ export default function CodeForm({
       </p>
       <Form className="py-2" onSubmit={(e) => verifyCode(e)}>
         <Input label="code" name="code" />
-        <Button className="mt-4">Sign Up</Button>
+        <Button className="mt-4">
+          {isLoading && (
+            <i className="fa-fw fa-regular fa-compact-disc mr-1 fa-spin-pulse" />
+          )}
+          Sign Up
+        </Button>
       </Form>
     </div>
   )
@@ -62,7 +69,7 @@ export default function CodeForm({
 
         useStyleStore.setState({ user: user.colors })
 
-        router.push('/')
+        setLoginProgress(2)
       })
       .catch((error) => {
         setLoading(false)

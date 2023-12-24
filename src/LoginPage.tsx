@@ -5,6 +5,7 @@ import { UseUserStore } from '@sone-dao/tone-react-user-store'
 import { useState } from 'react'
 import CodeForm from './components/CodeForm'
 import EmailForm from './components/EmailForm'
+import SuccessBox from './components/SuccessBox'
 
 type LoginPageProps = {
   useUserStore: UseUserStore
@@ -34,8 +35,10 @@ export default function LoginPage({
             userEmail={userEmail}
             useUserStore={useUserStore}
             useStyleStore={useStyleStore}
+            setLoginProgress={setLoginProgress}
             api={api}
           />
+          <SuccessBox />
         </Carousel>
       </div>
     </main>
