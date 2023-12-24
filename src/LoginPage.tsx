@@ -21,7 +21,7 @@ export default function LoginPage({
 
   const api = new ToneApiService()
   return (
-    <main className="flex items-center justify-center bg-global min-h-screen h-full p-4">
+    <main className="flex items-center justify-center bg-global grow h-full p-4">
       <div className="flex flex-col items-center w-full max-w-xl">
         <span className="font-release text-global text-5xl m-4">tone</span>
         <Carousel className="w-full" current={loginProgress}>

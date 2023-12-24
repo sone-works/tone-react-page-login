@@ -29,11 +29,11 @@ export default function EmailForm({
         <Input label="email" value={userEmail} setValue={setUserEmail} />
         {errorMessage && (
           <div className="flex items-center bg-global text-global my-2 p-2 text-small font-header">
-            <i className="fa-fw fa-regular fa-square-exclamation mr-2 text-xl" />
+            <i className="fa-fw fa-solid fa-exclamation mr-2 text-xl" />
             {errorMessage}
           </div>
         )}
-        <Button className="pt-2">
+        <Button className="pt-2" isDisabled={!userEmail ? true : false}>
           {isLoading && (
             <i className="fa-fw fa-regular fa-compact-disc mr-1 fa-spin-pulse" />
           )}
@@ -50,11 +50,9 @@ export default function EmailForm({
       .sendAuthEmail(userEmail)
       .then(() => setLoginProgress(1))
       .catch((error) => {
-        console.log({ error })
-        error.message == 'DATABASE_ERROR' &&
-          setErrorMessage('Invalid e-mail address.')
+        setErrorMessage('Invalid e-mail address.')
 
-        setLoading(false)
+        return setLoading(false)
       })
   }
 }

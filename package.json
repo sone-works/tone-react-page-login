@@ -16,7 +16,7 @@
     "dist"
   ],
   "dependencies": {
-    "@sone-dao/tone-react-api": "^2.2.0",
+    "@sone-dao/tone-react-api": "^2.5.0",
     "@sone-dao/tone-react-core-ui": "^2.9.0",
     "@sone-dao/tone-react-style-store": "^0.1.0",
     "@sone-dao/tone-react-user-store": "^0.3.0",
