@@ -23,6 +23,8 @@ export default function CodeForm({
   const [errorMessage, setErrorMessage] = useState<string>('')
   const [code, setCode] = useState<string>('')
 
+  const styles = useStyleStore()
+
   return (
     <div className="p-4 rounded-xl bg-global-flipped text-global-flipped w-full">
       <h3 className="font-header text-2xl font-normal">Authorization code</h3>
@@ -52,14 +54,24 @@ export default function CodeForm({
 
     const code = e.target.code.value || ''
 
-    return api.auth
+    api.auth
       .verifyCode(userEmail, code)
       .then(async (response) => {
+        console.log({ response })
+
         const { user } = response
 
         const avatar = await api.user.getAvatar(user.userId)
 
-        const dataURL = (avatar && URL.createObjectURL(avatar)) || ''
+        const dataURL = avatar ? URL.createObjectURL(avatar) : ''
+
+        if (!user.colors[0] || !user.colors[1]) user.colors = styles.global
+
+        if (!user.display)
+          user.display =
+            user.userId.substring(0, 4) +
+            '...' +
+            user.userId.substring(user.userId.length - 4)
 
         useUserStore.setState({
           isLoggedIn: true,
@@ -76,7 +88,7 @@ export default function CodeForm({
 
         return setLoginProgress(2)
       })
-      .catch(() => {
+      .catch((error) => {
         setErrorMessage('Invalid authorization code.')
 
         return setLoading(false)
