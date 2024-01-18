@@ -2116,13 +2116,6 @@
   resolved "https://registry.yarnpkg.com/@sone-dao/tone-react-css-utils/-/tone-react-css-utils-0.2.1.tgz#558faefc428abf6e8b2ac258a1db3cc7a93074e2"
   integrity sha512-eoGEWoDyEn6645RjkWpDc8tymvl854JfB6Eg4xETw9Y3cl2uPnEJcTi9uqDZ9F/mA8fojtoalAZ294sVRatMGw==
 
-"@sone-dao/tone-react-style-store@0.1.0":
-  version "0.1.0"
-  resolved "https://registry.yarnpkg.com/@sone-dao/tone-react-style-store/-/tone-react-style-store-0.1.0.tgz#0433fa5c175ba5f1533dc1fc49c876b88a42b6b9"
-  integrity sha512-P+QFhvQmpv691z/QQ0sd0NVG8fwFVMT3JyqB6L6rZTcFPbBa8ebV4hTLK2eWhJrL0kZNqPM0gR6TfH+o1o3+Hw==
-  dependencies:
-    zustand "^4.4.7"
-
 "@sone-dao/tone-react-user-store@0.3.0":
   version "0.3.0"
   resolved "https://registry.yarnpkg.com/@sone-dao/tone-react-user-store/-/tone-react-user-store-0.3.0.tgz#99eab4480d4008a78b2a49202350915f6ecfc0e0"
