@@ -1,13 +1,12 @@
 import ToneServiceApi from '@sone-dao/tone-react-api'
 import { Button, Form, Input } from '@sone-dao/tone-react-core-ui'
-import { UseStyleStore } from '@sone-dao/tone-react-style-store'
+import ToneCSSUtils from '@sone-dao/tone-react-css-utils'
 import { UseUserStore } from '@sone-dao/tone-react-user-store'
 import { useState } from 'react'
 
 type CodeFormProps = {
   userEmail: string
   useUserStore: UseUserStore
-  useStyleStore: UseStyleStore
   setExperience: Function
   api: ToneServiceApi
 }
@@ -15,15 +14,12 @@ type CodeFormProps = {
 export default function CodeForm({
   userEmail,
   useUserStore,
-  useStyleStore,
   setExperience,
   api,
 }: CodeFormProps) {
   const [isLoading, setLoading] = useState<boolean>(false)
   const [errorMessage, setErrorMessage] = useState<string>('')
   const [code, setCode] = useState<string>('')
-
-  const styles = useStyleStore()
 
   return (
     <div className="flex flex-col items-center justify-center h-full w-full p-4">
@@ -69,7 +65,15 @@ export default function CodeForm({
 
         const dataURL = avatar ? URL.createObjectURL(avatar) : ''
 
-        if (!user.colors[0] || !user.colors[1]) user.colors = styles.global
+        const colorsGlobal = ToneCSSUtils.getColors('global')
+
+        !user.colors[0] || !user.colors[1]
+          ? ToneCSSUtils.setColors(
+              'user',
+              colorsGlobal.lighter || '',
+              colorsGlobal.darker || ''
+            )
+          : ToneCSSUtils.setColors('user', user.colors[0], user.colors[1])
 
         if (!user.display)
           user.display =
@@ -80,15 +84,12 @@ export default function CodeForm({
         useUserStore.setState({
           isLoggedIn: true,
           userId: user.userId,
-          colors: user.colors,
           display: user.display,
           description: user.description,
           socials: user.socials,
           location: user.location,
           avatar: { dataURL },
         })
-
-        useStyleStore.setState({ user: user.colors })
 
         return setExperience('success')
       })

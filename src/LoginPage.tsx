@@ -1,5 +1,4 @@
 import ToneApiService from '@sone-dao/tone-react-api'
-import { UseStyleStore } from '@sone-dao/tone-react-style-store'
 import { UseUserStore } from '@sone-dao/tone-react-user-store'
 import { useState } from 'react'
 import CodeForm from './components/CodeForm'
@@ -9,13 +8,9 @@ import VerificationForm from './components/VerificationForm'
 
 type LoginPageProps = {
   useUserStore: UseUserStore
-  useStyleStore: UseStyleStore
 }
 
-export default function LoginPage({
-  useUserStore,
-  useStyleStore,
-}: LoginPageProps) {
+export default function LoginPage({ useUserStore }: LoginPageProps) {
   const [experience, setExperience] = useState<string>('email')
 
   const [userEmail, setUserEmail] = useState<string>('')
@@ -37,7 +32,6 @@ export default function LoginPage({
         <CodeForm
           userEmail={userEmail}
           useUserStore={useUserStore}
-          useStyleStore={useStyleStore}
           setExperience={setExperience}
           api={api}
         />
