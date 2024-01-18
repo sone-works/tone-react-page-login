@@ -8,7 +8,7 @@ type CodeFormProps = {
   userEmail: string
   useUserStore: UseUserStore
   useStyleStore: UseStyleStore
-  setLoginProgress: Function
+  setExperience: Function
   api: ToneServiceApi
 }
 
@@ -16,7 +16,7 @@ export default function CodeForm({
   userEmail,
   useUserStore,
   useStyleStore,
-  setLoginProgress,
+  setExperience,
   api,
 }: CodeFormProps) {
   const [isLoading, setLoading] = useState<boolean>(false)
@@ -26,26 +26,30 @@ export default function CodeForm({
   const styles = useStyleStore()
 
   return (
-    <div className="p-4 rounded-xl bg-global-flipped text-global-flipped w-full">
-      <h3 className="font-header text-2xl font-normal">Authorization code</h3>
-      <p className="font-content my-2 text-global-flipped font-content text-base">
-        Enter the code sent to your e-mail just now to login on this device.
-      </p>
-      <Form className="py-2" onSubmit={(e) => verifyCode(e)}>
-        <Input label="code" name="code" value={code} setValue={setCode} />
-        {errorMessage && (
-          <div className="flex items-center bg-global text-global my-2 p-1 text-small font-header">
-            <i className="fa-fw fa-solid fa-exclamation mr-2 text-xl" />
-            {errorMessage}
-          </div>
-        )}
-        <Button className="mt-4" isDisabled={code.length !== 6}>
-          {isLoading && (
-            <i className="fa-fw fa-regular fa-compact-disc mr-1 fa-spin-pulse" />
+    <div className="flex flex-col items-center justify-center h-full w-full p-4">
+      <span className="font-release text-global text-5xl m-4">tone</span>
+      <div className="flex flex-col p-4 rounded-xl border-4 border-global text-global w-full">
+        <h3 className="font-header text-2xl font-normal">Authorization code</h3>
+        <p className="font-content my-2 text-global font-content text-base">
+          Enter the authorization code sent to your e-mail to login with this
+          device.
+        </p>
+        <Form className="py-2" onSubmit={(e) => verifyCode(e)}>
+          <Input label="code" name="code" value={code} setValue={setCode} />
+          {errorMessage && (
+            <div className="flex items-center bg-global text-global my-2 p-1 text-small font-header">
+              <i className="fa-fw fa-solid fa-exclamation mr-2 text-xl" />
+              {errorMessage}
+            </div>
           )}
-          Login
-        </Button>
-      </Form>
+          <Button className="mt-4" isDisabled={code.length !== 6}>
+            {isLoading && (
+              <i className="fa-fw fa-regular fa-compact-disc mr-1 fa-spin-pulse" />
+            )}
+            Login
+          </Button>
+        </Form>
+      </div>
     </div>
   )
 
@@ -86,7 +90,7 @@ export default function CodeForm({
 
         useStyleStore.setState({ user: user.colors })
 
-        return setLoginProgress(2)
+        return setExperience('success')
       })
       .catch((error) => {
         setErrorMessage('Invalid authorization code.')

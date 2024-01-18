@@ -1,11 +1,11 @@
 import ToneApiService from '@sone-dao/tone-react-api'
-import { Carousel } from '@sone-dao/tone-react-core-ui'
 import { UseStyleStore } from '@sone-dao/tone-react-style-store'
 import { UseUserStore } from '@sone-dao/tone-react-user-store'
 import { useState } from 'react'
 import CodeForm from './components/CodeForm'
 import EmailForm from './components/EmailForm'
 import SuccessBox from './components/SuccessBox'
+import VerificationForm from './components/VerificationForm'
 
 type LoginPageProps = {
   useUserStore: UseUserStore
@@ -16,31 +16,51 @@ export default function LoginPage({
   useUserStore,
   useStyleStore,
 }: LoginPageProps) {
-  const [loginProgress, setLoginProgress] = useState<number>(0)
+  const [experience, setExperience] = useState<string>('email')
+
   const [userEmail, setUserEmail] = useState<string>('')
 
   const api = new ToneApiService()
-  return (
-    <main className="flex items-center justify-center bg-global grow h-full p-4">
-      <div className="flex flex-col items-center w-full max-w-xl">
-        <span className="font-release text-global text-5xl m-4">tone</span>
-        <Carousel className="w-full" current={loginProgress}>
-          <EmailForm
-            userEmail={userEmail}
-            setUserEmail={setUserEmail}
-            setLoginProgress={setLoginProgress}
-            api={api}
-          />
-          <CodeForm
-            userEmail={userEmail}
-            useUserStore={useUserStore}
-            useStyleStore={useStyleStore}
-            setLoginProgress={setLoginProgress}
-            api={api}
-          />
-          <SuccessBox />
-        </Carousel>
-      </div>
-    </main>
-  )
+
+  switch (experience) {
+    case 'email':
+      return (
+        <EmailForm
+          userEmail={userEmail}
+          setUserEmail={setUserEmail}
+          setExperience={setExperience}
+          api={api}
+        />
+      )
+    case 'code':
+      return (
+        <CodeForm
+          userEmail={userEmail}
+          useUserStore={useUserStore}
+          useStyleStore={useStyleStore}
+          setExperience={setExperience}
+          api={api}
+        />
+      )
+    case 'verification':
+      return (
+        <VerificationForm
+          userEmail={userEmail}
+          setExperience={setExperience}
+          useUserStore={useUserStore}
+          api={api}
+        />
+      )
+    case 'success':
+      return <SuccessBox />
+    default:
+      return (
+        <EmailForm
+          userEmail={userEmail}
+          setUserEmail={setUserEmail}
+          setExperience={setExperience}
+          api={api}
+        />
+      )
+  }
 }
