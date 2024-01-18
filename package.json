@@ -17,7 +17,7 @@
   ],
   "dependencies": {
     "@sone-dao/tone-react-api": "^2.8.0",
-    "@sone-dao/tone-react-core-ui": "^2.16.0",
+    "@sone-dao/tone-react-core-ui": "^2.16.1",
     "@sone-dao/tone-react-style-store": "0.1.0",
     "@sone-dao/tone-react-user-store": "0.3.0",
     "usehooks-ts": "^2.9.1"

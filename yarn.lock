@@ -2099,10 +2099,10 @@
     axios "^1.4.0"
     cookies-next "^4.1.0"
 
-"@sone-dao/tone-react-core-ui@^2.16.0":
-  version "2.16.0"
-  resolved "https://registry.yarnpkg.com/@sone-dao/tone-react-core-ui/-/tone-react-core-ui-2.16.0.tgz#f1611bda12c06905da1e3e15b4d5faadc211ae2b"
-  integrity sha512-fmMylhNPkhxTZvuDWThrpW8mzuwG/OWlzLEneawZlNCOgS4YdggHjflBFOpVedylkRsaPfIpDfp9+MeUDqzhbA==
+"@sone-dao/tone-react-core-ui@^2.16.1":
+  version "2.16.1"
+  resolved "https://registry.yarnpkg.com/@sone-dao/tone-react-core-ui/-/tone-react-core-ui-2.16.1.tgz#b76250f67ee7dbcfe95990d8a17e008e68bd3c0c"
+  integrity sha512-zSCjBNo3CoY1+1UtaMm0BCL134E3etcyBUcUDN5kkPcWwbZJkjSOr9cePz7Mg3SS9+RWmWiNiNDz0TFkP9YVNA==
   dependencies:
     "@nextui-org/react" "^2.2.9"
     "@sone-dao/sone-react-utils" "1.0.1"
