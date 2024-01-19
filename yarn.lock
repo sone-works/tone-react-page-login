@@ -2099,10 +2099,10 @@
     axios "^1.4.0"
     cookies-next "^4.1.0"
 
-"@sone-dao/tone-react-core-ui@2.17.1":
-  version "2.17.1"
-  resolved "https://registry.yarnpkg.com/@sone-dao/tone-react-core-ui/-/tone-react-core-ui-2.17.1.tgz#fe919c74fc9207464081cb4af8a500e2fc4a38d5"
-  integrity sha512-RJ5whnY4GIZZnzoUddIXKs11XnBpwTie+zRj0S9X45GufL08erRFEgkOERgKq3LAIPSWUKcj72YQYg37w9pLZw==
+"@sone-dao/tone-react-core-ui@2.17.2":
+  version "2.17.2"
+  resolved "https://registry.yarnpkg.com/@sone-dao/tone-react-core-ui/-/tone-react-core-ui-2.17.2.tgz#10547194322c072d0d1fa614ef771bfba41d6cc1"
+  integrity sha512-nKtclrG6bA+TCqSeQqbFfmkYXJQoEcwzggsLBxzl2k8oQFj4GByHd5SYP7GAVkkLvXyNdklsHaY+MoIy93DRfw==
   dependencies:
     "@nextui-org/react" "^2.2.9"
     "@sone-dao/sone-react-utils" "1.0.1"
@@ -4982,12 +4982,7 @@ use-sync-external-store@1.2.0:
   resolved "https://registry.yarnpkg.com/use-sync-external-store/-/use-sync-external-store-1.2.0.tgz#7dbefd6ef3fe4e767a0cf5d7287aacfb5846928a"
   integrity sha512-eEgnFxGQ1Ife9bzYs6VLi8/4X6CObHMw9Qr9tPY43iKwsPw8xE8+EFsf/2cFZ5S3esXgpWgtSCtLNS41F+sKPA==
 
-usehooks-ts@^2.9.1:
-  version "2.9.1"
-  resolved "https://registry.yarnpkg.com/usehooks-ts/-/usehooks-ts-2.9.1.tgz#953d3284851ffd097432379e271ce046a8180b37"
-  integrity sha512-2FAuSIGHlY+apM9FVlj8/oNhd+1y+Uwv5QNkMQz1oSfdHk4PXo1qoCw9I5M7j0vpH8CSWFJwXbVPeYDjLCx9PA==
-
-usehooks-ts@^2.9.4:
+usehooks-ts@^2.9.4, usehooks-ts@^2.9.5:
   version "2.9.5"
   resolved "https://registry.yarnpkg.com/usehooks-ts/-/usehooks-ts-2.9.5.tgz#1ef554505f1acd0d914b6eae82e652b42c8e0425"
   integrity sha512-M5LrjX9Wo4XRsof0zCCsq81x5+so/b89aUO53XPTjUehKAbOFhRq/DDRyv7qsRK4AEaJe1rhReFZqesPGnREhQ==
