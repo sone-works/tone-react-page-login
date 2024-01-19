@@ -2099,7 +2099,7 @@
     axios "^1.4.0"
     cookies-next "^4.1.0"
 
-"@sone-dao/tone-react-core-ui@2.x":
+"@sone-dao/tone-react-core-ui@2.17.1":
   version "2.17.1"
   resolved "https://registry.yarnpkg.com/@sone-dao/tone-react-core-ui/-/tone-react-core-ui-2.17.1.tgz#fe919c74fc9207464081cb4af8a500e2fc4a38d5"
   integrity sha512-RJ5whnY4GIZZnzoUddIXKs11XnBpwTie+zRj0S9X45GufL08erRFEgkOERgKq3LAIPSWUKcj72YQYg37w9pLZw==
